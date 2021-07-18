@@ -16,4 +16,9 @@ const player = new MediaPlayer({
 btnPlay.addEventListener("click", () => player.togglePlay());
 btnMute.addEventListener("click", () => player.toggleMute());
 
-
+// Service Workers
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(error => {
+    console.error(error.message)
+  })
+}
